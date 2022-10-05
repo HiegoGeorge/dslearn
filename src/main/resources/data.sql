@@ -13,3 +13,39 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
+
+
+INSERT INTO tb_course (name, img_uri, img_gray_uri) VALUES ('Bootcamp Html', 'testeimg', 'testeimggray');
+
+INSERT INTO tb_offer (edition, start_moment, end_moment,course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2020-11-20T03:00:00Z', TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', 1);
+INSERT INTO tb_offer (edition, start_moment, end_moment,course_id) VALUES ('2.0', TIMESTAMP WITH TIME ZONE '2021-12-20T03:00:00Z', TIMESTAMP WITH TIME ZONE '2022-12-20T03:00:00Z', 1);
+
+
+INSERT INTO tb_resource (title, description, position, img_uri, resource_type_enum, offer_id) VALUES ('Trilha HTML', 'Trilha Principal do curso', '1', 'testeIMGURI', 1, 1);
+INSERT INTO tb_resource (title, description, position, img_uri, resource_type_enum, offer_id) VALUES ('Forum', 'Tire suas dúvidas', '2', 'testeIMGURI', 2, 1);
+INSERT INTO tb_resource (title, description, position, img_uri, resource_type_enum, offer_id) VALUES ('Lives', 'Lives exclusivas para turma', '3', 'testeIMGURI', 0, 1);
+
+
+INSERT INTO tb_section (title, description, position, img_uri, resource_id,prerequisite_id) VALUES ('Capitulo 1', 'Capítulo de iniciação', '1', 'testeIMGURI', 1, null);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id,prerequisite_id) VALUES ('Capitulo 2', 'Capítulo de Aprendizado', '1', 'testeIMGURI', 1, 1);
+INSERT INTO tb_section (title, description, position, img_uri, resource_id,prerequisite_id) VALUES ('Capitulo 3', 'Capítulo Final', '1', 'testeIMGURI', 1, 2);
+
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refound_moment, availabel, only_update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', null, true,false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refound_moment, availabel, only_update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', null, true,false);
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 capítulo 1', 1, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (1, 'Material de Apoio: abc', 'youtube.com.br');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 capítulo 1', 2, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (2, '', 'youtube.com.br');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 capítulo 1', 3, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (3, '', 'youtube.com.br');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tarefa 1 capítulo 1', 4, 1);
+INSERT INTO tb_task (id, desciption, question_count, aproval_count, wight, due_date) VALUES (4, 'Realizar Trabalho', 5, 4 , 1.0, TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z');
+
+
+INSERT INTO tb_lesson_done (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lesson_done (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
